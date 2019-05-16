@@ -9,10 +9,11 @@
 
     <!--<timestamp key="bySecond" datePattern="yyyy-MM-dd HH:mm:ss"/>-->
 
-    <!--控制台输出 -->
+    <!-- 控制台输出 -->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--默认就是 PatternLayoutEncoder -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%date{dd-MMM-yyyy HH:mm:ss.SSS, Locale.US} [%thread] %-5level %logger{50}: -%msg%n</pattern>
+            <pattern>%highlight([%-5level]) %date{MM-dd-yyyy HH:mm:ss.SSS} [%thread] %-16.64logger{64} --- %highlight(%n%msg%n)</pattern>
         </encoder>
     </appender>
 
